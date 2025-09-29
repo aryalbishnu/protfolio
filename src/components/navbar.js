@@ -1,7 +1,7 @@
 // Navbar.jsx
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FileText,Menu, X, Rocket, Languages, Sun, Moon } from "lucide-react";
+import { Menu, X, Rocket, Languages, Sun, Moon } from "lucide-react";
 
 const defaultLinks = [
   { href: "#hero", label: "Home" },
@@ -21,17 +21,11 @@ export default function Navbar({
     { code: "en", label: "English" },
     { code: "ja", label: "日本語" },
   ],
-  cvs = [
-    { code: "show", label: "Show CV" },
-    { code: "download", label: "Download CV" },
-  ],
-  cvUrl = "./text/Bishnu_Aryal_CV.pdf", 
 }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState("dark");
   const [langOpen, setLangOpen] = useState(false);
-  const [cvOpen, setCvOpen] = useState(false); 
 
   useEffect(() => {
     const onScroll = () => setScrolled((window.scrollY || 0) > 10);
@@ -44,25 +38,6 @@ export default function Navbar({
 
   const selectLang = (code) => {
     onLanguageChange(code);
-    setLangOpen(false);
-    setCvOpen(false);
-    setOpen(false);
-  };
-
-const handleCvAction = (code) => {
-    if (!cvUrl) return;
-    if (code === "show") {
-      window.open(cvUrl, "_blank", "noopener");
-    } else if (code === "download") {
-      const a = document.createElement("a");
-      a.href = cvUrl;
-      // Optional nicer file name:
-      a.download = cvUrl.split("/").pop() || "CV.pdf";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    }
-    setCvOpen(false);
     setLangOpen(false);
     setOpen(false);
   };
@@ -93,42 +68,6 @@ const handleCvAction = (code) => {
           </ul>
 
           <div className="d-flex align-items-center gap-2">
-            <div className="d-none d-lg-block position-relative">
-  <button
-    className="btn btn-sm btn-outline-light d-inline-flex align-items-center gap-1"
-    onClick={() => { setCvOpen((v) => !v); setLangOpen(false); }}
-    aria-haspopup="listbox"
-    aria-expanded={cvOpen}
-  >
-    <FileText size={16} />
-    CV
-  </button>
-
-  <AnimatePresence>
-    {cvOpen && (
-      <motion.ul
-        initial={{ opacity: 0, y: -6 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -6 }}
-        transition={{ duration: 0.18 }}
-        className="lang-menu glass p-2 m-0"
-        role="listbox"
-      >
-        {cvs.map((c) => (
-          <li key={c.code}>
-            <button
-              className="lang-item"
-              onClick={() => handleCvAction(c.code)}
-              role="option"
-            >
-              {c.label}
-            </button>
-          </li>
-        ))}
-      </motion.ul>
-    )}
-  </AnimatePresence>
-</div>
 
             <div className="d-none d-lg-block position-relative">
               <button
