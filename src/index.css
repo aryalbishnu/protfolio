@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+   background: linear-gradient(to right, #0d6efd, #6610f2);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Background + min-height adapts by breakpoint */
+.hero {
+  min-height: 50vh;
+
+}
+.about {
+  min-height: 50vh;
+
+}
+.skills {
+  min-height: 50vh;
+
+}
+.qualification {
+  min-height: 50vh;
+
+}
+.education {
+  min-height: 50vh;
+
+}
+.certificates {
+  min-height: 50vh;
+
+}
+
+@media (min-width: 768px) {
+  .hero { min-height: 65vh; }
+}
+
+/* Responsive avatar size */
+.avatar { width: 160px; }
+@media (min-width: 576px) { .avatar { width: 190px; } }
+@media (min-width: 992px) { .avatar { width: 240px; } }
+
+/* Optional: smooth anchor scrolling */
+html { scroll-behavior: smooth; }
+
+
+

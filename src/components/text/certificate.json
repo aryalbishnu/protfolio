@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Driver's License",
+    "issuer": "National Police Agency",
+    "date": "April 2022",
+    "verifyUrl": "#",
+    "skills": ["Car"]
+  },
+  {
+    "title": "Japanese Language Test N2",
+    "issuer": "Japan Educational Exchanges and Services",
+    "date": "Dec 2020",
+    "verifyUrl": "#",
+    "skills": ["Reading", "Writing", "Listening"]
+  },
+  {
+    "title": "Java programming Level 3",
+    "issuer": "Certify Information Processing Skills Certification Committee",
+    "date": "Feb 2020",
+    "verifyUrl": "#",
+    "skills": ["Java", "Java syntax and structure", "classes and methods", "Object-Oriented Concepts"]
+  },
+  {
+    "title": "ICT Proficiency Test Level 4",
+    "issuer": "ICT Proficiency Certification Association",
+    "date": "Jan 2020",
+    "verifyUrl": "#",
+    "skills": ["Hardware", "software", "Operating Systems"]
+  }
+]
