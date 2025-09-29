@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import profilePic from "../images/aryal.jpg";
-import resumePdf from "./text/Bishnu_Aryal_CV.pdf"; 
 
 function Hero() {
   const roles = ["Backend Developer", "Full-Stack Engineer", "Tech Enthusiast"];
@@ -24,6 +23,7 @@ function Hero() {
               src={profilePic}
               alt="Bishnu Aryal"
               className="avatar img-fluid rounded-circle shadow border border-3 border-white"
+              style={{ width: "220px", height: "220px", objectFit: "cover" }}
             />
           </div>
           
@@ -49,11 +49,6 @@ function Hero() {
               </a>
             </div>
           </div>
-<div>
-      <a href={resumePdf} download="MyResume.pdf">
-        <button>Download Resume (PDF)</button>
-      </a>
-    </div>
           
         </div>
       </div>

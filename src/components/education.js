@@ -17,53 +17,6 @@ const item = {
   show:   { opacity: 1, y: 0, scale: 1, transition: { duration: 0.35, ease: "easeOut" } },
 };
 
-const DEFAULT_EDU = [
-  {
-    degree: "Faculty of Arts and Science",
-    school: "The Open University of Japan",
-    period: "2025 — Present",
-    location: "Chiba, Japan",
-    details: [
-      "Spring Boot, Java, Python, REST best practices, Microservices",
-      "Docker, Linux, Git, CI/CD (GitHub Actions/Jenkins)",
-    ],
-    badge: "Ongoing",
-  },
-  {
-    degree: "International IT Department",
-    school: "Nihon International IT College",
-    period: "2018 — 2021",
-    location: "Chiba, Japan",
-    details: [
-      "Core: Data Structures, Databases, Networks, OS, Java, Php",
-      "Capstone: FinTech backend API with security best practices",
-    ],
-    badge: "Honors",
-  },
-  {
-    degree: "Language School",
-    school: "Only One Japanese Language School",
-    period: "2016 — 2018",
-    location: "Chiba, Japan",
-    details: [
-      "Core: Japanese Language",
-      "Capstone: Language best practice",
-    ],
-    badge: "Honors",
-  },
-  {
-    degree: "Computer Science",
-    school: "Future Brighter Higher Secondary School",
-    period: "2012 — 2014",
-    location: "Baglung, Nepal",
-    details: [
-      "Core: Account, Math, Computer",
-      "Capstone: C++, Math best practices",
-    ],
-    badge: "Honors",
-  },
-];
-
 export default function Education({
   items = education,
   title = "Education",

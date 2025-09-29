@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Briefcase, FolderOpen, Award } from "lucide-react";
-import profilePic from "../images/aryal.jpg";
+import profilePic from "../images/test.jpg";
 import { motion } from "framer-motion";
 
 function About() {
@@ -31,27 +31,35 @@ function About() {
     const [certificates, setCertificates] = useState(0);
 
     // increment effect
-    useEffect(() => {
-        const duration = 1500; // animation time in ms
-        const stepTime = 30;   // how often to update (ms)
-        const steps = duration / stepTime;
+ useEffect(() => {
+  const duration = 1500;      // ms
+  const stepTime = 30;        // ms
+  const steps = duration / stepTime;
 
-        let count = 0;
-        const interval = setInterval(() => {
-            count++;
-            setYears(Math.min(Math.round((targetValues.years / steps) * count), targetValues.years));
-            setProjects(Math.min(Math.round((targetValues.projects / steps) * count), targetValues.projects));
-            setCertificates(Math.min(Math.round((targetValues.certificates / steps) * count), targetValues.certificates));
+  let count = 0;
+  const interval = setInterval(() => {
+    count++;
+    setYears(Math.min(Math.round((targetValues.years / steps) * count), targetValues.years));
+    setProjects(Math.min(Math.round((targetValues.projects / steps) * count), targetValues.projects));
+    setCertificates(Math.min(Math.round((targetValues.certificates / steps) * count), targetValues.certificates));
 
-            if (count >= steps) clearInterval(interval);
-        }, stepTime);
+    if (count >= steps) clearInterval(interval);
+  }, stepTime);
 
-        return () => clearInterval(interval);
-    }, []);
+  return () => clearInterval(interval);
+// ✅ include the values you use
+}, [targetValues.years, targetValues.projects, targetValues.certificates]);
+
 
     return (
         <section id="about" className="about bg-gradient-hero text-white py-5">
             <div className="container">
+                
+                <div className="text-center">
+                    <h2 className="display-6 fw-bold mb-2">
+            About <span className="text-info"> Me</span>
+          </h2>
+                        </div>
                 <div className="row align-items-center gy-4">
 
                     {/* Photo */}
@@ -59,16 +67,14 @@ function About() {
                         <img
                             src={profilePic}
                             alt="Bishnu Aryal"
-                            className="img-fluid rounded-circle shadow border border-3 border-light"
-                            style={{ width: "220px", height: "220px", objectFit: "cover" }}
+                            className="img-fluid shadow border-light"
+                            style={{ width: "520px", height: "300px", objectFit: "cover" }}
                         />
                     </div>
 
                     {/* Text */}
                     <div className="col-12 col-md-7 text-center text-md-start">
-                        <h2 className="display-6 fw-bold mb-3">
-                            About <span className="text-info">Me</span>
-                        </h2>
+                        
                         <p className="lead mb-4">
                             I’m a <strong className="text-info">Java Developer</strong> with{" "}
                             <strong>{targetValues.years}+ years</strong> of experience building backend systems.
