@@ -1,67 +1,124 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import { useLanguage } from "../contexts/LanguageContext";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Contact() {
+
+  const { language } = useLanguage();
+
+  // Get localized text
+  const text = {
+    en: {
+      title: "Contact",
+      subtit: "Me"
+    },
+    jp: {
+      title: "連絡して",
+      subtit: "ください"
+    }
+  };
+
+  const { title, subtit } = text[language] || text.en;
+
+  // Get EmailJS credentials based on language
+  const langPrefix = language.toUpperCase();
+  const emailConfig = {
+    publicKey: process.env[`REACT_APP_${langPrefix}_PUBLIC_KEY`],
+    serviceId: process.env[`REACT_APP_${langPrefix}_SERVICE_ID`],
+    sendTemplateId: process.env[`REACT_APP_${langPrefix}_SEND_TEMPLATE_ID`],
+    returnTemplateId: process.env[`REACT_APP_${langPrefix}_RETURN_TEMPLATE_ID`]
+  };
+
   const formRef = useRef(null);
+  const recaptchaRef = useRef(null);
+
+  // Check if reCAPTCHA site key is configured
+  const recaptchaSiteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
+  const isRecaptchaEnabled = recaptchaSiteKey && recaptchaSiteKey !== 'your_recaptcha_site_key_here';
+
+  // Map language code to reCAPTCHA language code
+  // Google reCAPTCHA uses 'ja' for Japanese, not 'jp'
+  const recaptchaLanguage = language === 'jp' ? 'ja' : language;
 
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
+
+  // Reset reCAPTCHA token when language changes
+  useEffect(() => {
+    setRecaptchaToken(null);
+  }, [language]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
+  const onRecaptchaChange = (token) => {
+    setRecaptchaToken(token);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check if reCAPTCHA is completed (only if enabled)
+    if (isRecaptchaEnabled && !recaptchaToken) {
+      alert("Please complete the reCAPTCHA verification.");
+      return;
+    }
+
     setSending(true);
 
     try {
       // Map your fields to the EmailJS template variables
       // 1. Send message to you
-      const result = await emailjs.send(
-        "service_66ru1tl",
-        "template_d2qjj2s",
+      await emailjs.send(
+        emailConfig.serviceId,
+        emailConfig.sendTemplateId,
         {
           from_name: form.name,
           reply_to: form.email,
           message: form.message,
         },
-        "RxN0YmNiea0PGR7rF"
+        emailConfig.publicKey
       );
-  
+
       // 2. Send auto-reply to USER
     await emailjs.send(
-      "service_66ru1tl",
-      "template_ypebzpr", // template for sending confirmation to user
+      emailConfig.serviceId,
+      emailConfig.returnTemplateId, // template for sending confirmation to user
       {
         from_name: form.name,
-        reply_to: form.email, // user’s email → goes into {{reply_to}}
+        reply_to: form.email, // user's email → goes into {{reply_to}}
       },
-      "RxN0YmNiea0PGR7rF"
+      emailConfig.publicKey
     );
 
-      console.log("EmailJS success:", result.text);
       setSent(true);
       setForm({ name: "", email: "", message: "" }); // clear fields
+      setRecaptchaToken(null); // clear reCAPTCHA
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset(); // reset reCAPTCHA widget
+      }
     } catch (err) {
-      console.error("EmailJS error:", err);
       alert("Sending failed. Please try again.");
     } finally {
       setSending(false);
-      // hide “sent” message after a short delay, optional
+      // hide "sent" message after a short delay, optional
       setTimeout(() => setSent(false), 2500);
     }
   };
 
   const isValid =
-    form.name.trim() && form.email.trim() && form.message.trim();
+    form.name.trim() && form.email.trim() && form.message.trim() &&
+    (!isRecaptchaEnabled || recaptchaToken);
 
   return (
-    <section id="contact" className="contact cert-scope bg-gradient-hero text-white py-5">
-      <div className="container my-5">
-       <h2 className="text-center mb-4 fw-bold">📩 Contact Me</h2>
+    <section id="contact" className="contact cert-scope bg-gradient-hero text-white py-4">
+      <div className="container">
+       <h2 className="text-center mb-4 fw-bold">📩 { title } <span className="text-info"> { subtit }</span></h2>
   <div className="row justify-content-center">
     
     <div className="col-12 col-md-8 col-lg-5">
@@ -107,6 +164,26 @@ function Contact() {
                 />
               </div>
 
+          {isRecaptchaEnabled && (
+            <div className="mb-3 d-flex justify-content-center">
+                <ReCAPTCHA
+                  key={recaptchaLanguage}
+                  ref={recaptchaRef}
+                  sitekey={recaptchaSiteKey}
+                  onChange={onRecaptchaChange}
+                  theme="dark"
+                  hl={recaptchaLanguage}
+                />
+              </div>
+          )}
+
+          {!isRecaptchaEnabled && (
+            <div className="mb-3 text-center">
+              <small className="text-warning">
+                ⚠️ reCAPTCHA not configured. Add REACT_APP_RECAPTCHA_SITE_KEY to .env file.
+              </small>
+            </div>
+          )}
 
           <button
                 type="submit"

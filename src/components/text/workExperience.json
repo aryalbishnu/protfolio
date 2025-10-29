@@ -1,127 +1,257 @@
-[
-  {
-    "role": "Reconstruction of Management Accounting System & Data Integration",
-    "company": "eSTACK Corporation",
-    "period": "2025-06 — 2025-09",
-    "location": "Tokyo, Japan",
-    "type": "Full-time",
-    "summary": "Built and optimized ASTERIA Warp workflows for CSV I/O, multi-source data transformation, and automation.",
-    "achievements": [
-      "Built CSV I/O processes with ASTERIA Warp for seamless DB import/export.",
-      "Designed no-code data transformation flows across DB and CSV sources.",
-      "Enhanced system reliability by adding error handling and logging features.",
-      "Automated monthly batch jobs to improve operational efficiency.",
-      "Fixed legacy bugs and supported production release deployment."
-    ],
-    "stack": ["Java", "JavaScript", "PostgreSQL", "ASTERIA", "BackLog"],
-    "links": [{ "href": "#", "label": "Project Overview" }],
-    "kpis": [
-      { "label": "Role", "value": "Programmar" },
-      { "label": "Deploys / Month", "value": "6-8" },
-      { "label": "Team Members", "value": "4" }
-    ]
-  },
-  {
-    "role": "Reconstruction Foreign Insurance Company",
-    "company": "ADHR Corporation",
-    "period": "2024-11 — 2025-03",
-    "location": "Tokyo, Japan",
-    "type": "Full-time",
-    "summary": "Modernized agency support tools for a global insurer by replacing Google Gadgets with Java/HTML and building utilities for performance checks, XML workflows, and batch processing.",
-    "achievements": [
-      "Rebuilt notification screen by replacing Google Gadgets (XML/JavaScript) with Java and HTML for improved maintainability.",
-      "Created macro-based tools to analyze server speed, PC performance, and memory usage from log files.",
-      "Developed XML generation and upload tools to streamline internal communication workflows.",
-      "Built scheduled batch processes to read server files and display results on-screen automatically."
-    ],
-    "stack": ["Java", "JavaScript", "jQuery", "Oracle", "Seasar2", "Eclipse", "VBA", "SVN", "Tomcat"],
-    "links": [{ "href": "#", "label": "Project Overview" }],
-    "kpis": [
-      { "label": "Role", "value": "Programmar" },
-      { "label": "Deploys / Month", "value": "6-8" },
-      { "label": "Team Members", "value": "11" }
-    ]
-  },
-  {
-    "role": "Rebuilding the Sales and Implementation Management System",
-    "company": "ADHR Corporation",
-    "period": "2023-01 — 2024-09",
-    "location": "Tokyo, Japan",
-    "type": "Full-time",
-    "summary": "Rebuilt inventory and sales system with enhanced product tracking, search filters, and quoting support; added data structures for attributes and pricing visibility.",
-    "achievements": [
-      "Enhanced search filters and UI labels to support faster quotation generation and better product visibility.",
-      "Developed a product grouping feature, including 6 new screens and 8 functional modules to streamline product categorization.",
-      "Implemented 7 batch processes to automate backend operations and improve data consistency."
-    ],
-    "stack": ["Java", "JavaScript", "jQuery", "Ajax", "Bootstrap", "JSF", "SVN", "DataSpider", "FastApp", "TeraTerm"],
-    "links": [{ "href": "#", "label": "Project Overview" }],
-    "kpis": [
-      { "label": "Role", "value": "Programmar" },
-      { "label": "Deploys / Month", "value": "6-8" },
-      { "label": "Team Members", "value": "14" }
-    ]
-  },
-  {
-    "role": "System Development for a Logistics Company",
-    "company": "ADHR Corporation",
-    "period": "2022-05 — 2022-12",
-    "location": "Tokyo, Japan",
-    "type": "Full-time",
-    "summary": "Supported logistics system development from detailed design to testing, streamlining inventory tracking, shipment coordination, and operational workflows.",
-    "achievements": [
-      "Created and refined detailed design documents to support logistics workflows.",
-      "Executed functional and integration tests to validate system reliability and data consistency.",
-      "Improved traceability and documentation quality across the development cycle."
-    ],
-    "stack": ["Java", "JavaScript", "jQuery", "Spring", "SQL", "Eclipse", "Git", "Tomcat"],
-    "links": [{ "href": "#", "label": "Project Overview" }],
-    "kpis": [
-      { "label": "Role", "value": "Programmar" },
-      { "label": "Deploys / Month", "value": "6-8" },
-      { "label": "Team Members", "value": "25" }
-    ]
-  },
-  {
-    "role": "Banking System Development",
-    "company": "ADHR Corporation",
-    "period": "2021-08 — 2022-04",
-    "location": "Tokyo, Japan",
-    "type": "Full-time",
-    "summary": "Supported banking system development by refining detailed designs and assisting with end-to-end testing for core operations like accounts, transactions, and compliance.",
-    "achievements": [
-      "Collaborated with developers and QA teams to ensure smooth transition from design to testing.",
-      "Led backend development and testing efforts, including unit and integration.",
-      "Executed and validated test cases to confirm system reliability and functional accuracy.",
-      "Supported documentation updates and defect tracking throughout the test cycle."
-    ],
-    "stack": ["Java", "JavaScript", "jQuery", "Spring Boot", "MySQL", "Eclipse", "SVN", "Bootstrap"],
-    "links": [{ "href": "#", "label": "Project Overview" }],
-    "kpis": [
-      { "label": "Role", "value": "Programmar" },
-      { "label": "Deploys / Month", "value": "6-8" },
-      { "label": "Team Members", "value": "10" }
-    ]
-  },
-  {
-    "role": "Website Renovation for a Convenience Store Company",
-    "company": "ADHR Corporation",
-    "period": "2021-04 — 2021-08",
-    "location": "Tokyo, Japan",
-    "type": "Full-time",
-    "summary": "Revamped convenience store website to enhance UX, mobile responsiveness, and product visibility; streamlined navigation and optimized cross-device performance.",
-    "achievements": [
-      "Designed & shipped REST APIs with Spring Boot; improved P99 latency by ~30%.",
-      "Led backend development and testing efforts, including unit and integration.",
-      "High-performance web application.",
-      "Team collaboration focus."
-    ],
-    "stack": ["Java", "JavaScript", "Spring Boot", "PostgreSQL", "Eclipse", "Git", "Tomcat"],
-    "links": [{ "href": "#", "label": "Project Overview" }],
-    "kpis": [
-      { "label": "Role", "value": "Tester" },
-      { "label": "Deploys / Month", "value": "4-5" },
-      { "label": "Team Members", "value": "6" }
-    ]
-  }
-]
+{
+  "en": [
+    {
+      "role": "Reconstruction of Management Accounting System & Data Integration",
+      "company": "eSTACK Corporation",
+      "period": "2025-06 — 2025-11",
+      "location": "Tokyo, Japan",
+      "type": "Full-time",
+      "summary": "Built and optimized ASTERIA Warp workflows for CSV I/O, multi-source data transformation, and automation.",
+      "achievements": [
+        "Built CSV I/O processes with ASTERIA Warp for seamless DB import/export.",
+        "Designed no-code data transformation flows across DB and CSV sources.",
+        "Enhanced system reliability by adding error handling and logging features.",
+        "Automated monthly batch jobs to improve operational efficiency.",
+        "Fixed legacy bugs and supported production release deployment."
+      ],
+      "stack": ["Java", "JavaScript", "PostgreSQL", "ASTERIA", "Zapier", "React", "BackLog"],
+      "links": [{ "href": "#", "label": "Project Overview" }],
+      "kpis": [
+        { "label": "Role", "value": "Programmar" },
+        { "label": "Deploys / Month", "value": "6" },
+        { "label": "Team Members", "value": "4" }
+      ]
+    },
+    {
+      "role": "Reconstruction Foreign Insurance Company",
+      "company": "ADHR Corporation",
+      "period": "2024-11 — 2025-05",
+      "location": "Tokyo, Japan",
+      "type": "Full-time",
+      "summary": "Modernized agency support tools for a global insurer by replacing Google Gadgets with Java/HTML and building utilities for performance checks, XML workflows, and batch processing.",
+      "achievements": [
+        "Rebuilt notification screen by replacing Google Gadgets (XML/JavaScript) with Java and HTML for improved maintainability.",
+        "Created macro-based tools to analyze server speed, PC performance, and memory usage from log files.",
+        "Developed XML generation and upload tools to streamline internal communication workflows.",
+        "Built scheduled batch processes to read server files and display results on-screen automatically."
+      ],
+      "stack": ["Java", "JavaScript", "jQuery", "Oracle", "Seasar2", "Eclipse", "VBA", "SVN", "Tomcat"],
+      "links": [{ "href": "#", "label": "Project Overview" }],
+      "kpis": [
+        { "label": "Role", "value": "Programmar" },
+        { "label": "Deploys / Month", "value": "7" },
+        { "label": "Team Members", "value": "11" }
+      ]
+    },
+    {
+      "role": "Rebuilding the Sales and Implementation Management System",
+      "company": "ADHR Corporation",
+      "period": "2023-01 — 2024-09",
+      "location": "Tokyo, Japan",
+      "type": "Full-time",
+      "summary": "Rebuilt inventory and sales system with enhanced product tracking, search filters, and quoting support; added data structures for attributes and pricing visibility.",
+      "achievements": [
+        "Enhanced search filters and UI labels to support faster quotation generation and better product visibility.",
+        "Developed a product grouping feature, including 6 new screens and 8 functional modules to streamline product categorization.",
+        "Implemented 7 batch processes to automate backend operations and improve data consistency."
+      ],
+      "stack": ["Java", "JavaScript", "jQuery", "Ajax", "Bootstrap", "JSF", "SVN", "DataSpider", "FastApp", "TeraTerm"],
+      "links": [{ "href": "#", "label": "Project Overview" }],
+      "kpis": [
+        { "label": "Role", "value": "Programmar" },
+        { "label": "Deploys / Month", "value": "21" },
+        { "label": "Team Members", "value": "14" }
+      ]
+    },
+    {
+      "role": "System Development for a Logistics Company",
+      "company": "ADHR Corporation",
+      "period": "2022-05 — 2022-12",
+      "location": "Tokyo, Japan",
+      "type": "Full-time",
+      "summary": "Supported logistics system development from detailed design to testing, streamlining inventory tracking, shipment coordination, and operational workflows.",
+      "achievements": [
+        "Created and refined detailed design documents to support logistics workflows.",
+        "Executed functional and integration tests to validate system reliability and data consistency.",
+        "Improved traceability and documentation quality across the development cycle."
+      ],
+      "stack": ["Java", "JavaScript", "jQuery", "Spring", "SQL", "Eclipse", "Git", "Tomcat"],
+      "links": [{ "href": "#", "label": "Project Overview" }],
+      "kpis": [
+        { "label": "Role", "value": "Programmar" },
+        { "label": "Deploys / Month", "value": "8" },
+        { "label": "Team Members", "value": "25" }
+      ]
+    },
+    {
+      "role": "Banking System Development",
+      "company": "ADHR Corporation",
+      "period": "2021-08 — 2022-04",
+      "location": "Tokyo, Japan",
+      "type": "Full-time",
+      "summary": "Supported banking system development by refining detailed designs and assisting with end-to-end testing for core operations like accounts, transactions, and compliance.",
+      "achievements": [
+        "Collaborated with developers and QA teams to ensure smooth transition from design to testing.",
+        "Led backend development and testing efforts, including unit and integration.",
+        "Executed and validated test cases to confirm system reliability and functional accuracy.",
+        "Supported documentation updates and defect tracking throughout the test cycle."
+      ],
+      "stack": ["Java", "JavaScript", "jQuery", "Spring Boot", "MySQL", "Eclipse", "SVN", "Bootstrap"],
+      "links": [{ "href": "#", "label": "Project Overview" }],
+      "kpis": [
+        { "label": "Role", "value": "Programmar" },
+        { "label": "Deploys / Month", "value": "9" },
+        { "label": "Team Members", "value": "10" }
+      ]
+    },
+    {
+      "role": "Website Renovation for a Convenience Store Company",
+      "company": "ADHR Corporation",
+      "period": "2021-04 — 2021-08",
+      "location": "Tokyo, Japan",
+      "type": "Full-time",
+      "summary": "Revamped convenience store website to enhance UX, mobile responsiveness, and product visibility; streamlined navigation and optimized cross-device performance.",
+      "achievements": [
+        "Designed & shipped REST APIs with Spring Boot; improved P99 latency by ~30%.",
+        "Led backend development and testing efforts, including unit and integration.",
+        "High-performance web application.",
+        "Team collaboration focus."
+      ],
+      "stack": ["Java", "JavaScript", "Spring Boot", "PostgreSQL", "Eclipse", "Git", "Tomcat"],
+      "links": [{ "href": "#", "label": "Project Overview" }],
+      "kpis": [
+        { "label": "Role", "value": "Tester" },
+        { "label": "Deploys / Month", "value": "6" },
+        { "label": "Team Members", "value": "6" }
+      ]
+    }
+  ],
+
+  "jp": [
+    {
+      "role": "管理会計システムの再構築＆データ統合",
+      "company": "eSTACK株式会社",
+      "period": "2025年06月 — 2025年11月",
+      "location": "東京、日本",
+      "type": "正社員",
+      "summary": "ASTERIA Warpを使用してCSV入出力、複数ソースのデータ変換、自動化のワークフローを構築・最適化。",
+      "achievements": [
+        "ASTERIA WarpでCSV入出力プロセスを構築し、シームレスなDB連携を実現。",
+        "DB・CSV間のノーコードデータ変換フローを設計。",
+        "エラーハンドリングとログ機能の追加でシステムの信頼性を向上。",
+        "月次バッチジョブを自動化し、業務効率を改善。",
+        "レガシーバグの修正と本番環境リリースをサポート。"
+      ],
+      "stack": ["Java", "JavaScript", "PostgreSQL", "ASTERIA", "Zapier", "React", "BackLog"],
+      "links": [{ "href": "#", "label": "プロジェクト概要" }],
+      "kpis": [
+        { "label": "役割", "value": "プログラマー" },
+        { "label": "月次デプロイ", "value": "6" },
+        { "label": "チームメンバー", "value": "4" }
+      ]
+    },
+    {
+      "role": "外資系保険会社の再構築",
+      "company": "ADHR株式会社",
+      "period": "2024年11月 — 2025年05月",
+      "location": "東京、日本",
+      "type": "正社員",
+      "summary": "グローバル保険会社向けに、Google GadgetsをJava/HTMLで置き換え、パフォーマンスチェック、XMLワークフロー、バッチ処理のユーティリティを構築。",
+      "achievements": [
+        "Google Gadgets（XML/JavaScript）をJava・HTMLに置き換え、保守性を向上。",
+        "サーバー速度、PC性能、メモリ使用量をログファイルから分析するマクロベースツールを作成。",
+        "XML生成・アップロードツールを開発し、社内コミュニケーションワークフローを効率化。",
+        "サーバーファイルを読み込み、結果を画面に自動表示するスケジュールバッチを構築。"
+      ],
+      "stack": ["Java", "JavaScript", "jQuery", "Oracle", "Seasar2", "Eclipse", "VBA", "SVN", "Tomcat"],
+      "links": [{ "href": "#", "label": "プロジェクト概要" }],
+      "kpis": [
+        { "label": "役割", "value": "プログラマー" },
+        { "label": "月次デプロイ", "value": "7" },
+        { "label": "チームメンバー", "value": "11" }
+      ]
+    },
+    {
+      "role": "販売・実装管理システムの再構築",
+      "company": "ADHR株式会社",
+      "period": "2023年01月 — 2024年09月",
+      "location": "東京、日本",
+      "type": "正社員",
+      "summary": "在庫・販売システムを再構築し、商品追跡、検索フィルタ、見積サポートを強化。属性と価格表示のデータ構造を追加。",
+      "achievements": [
+        "検索フィルタとUIラベルを強化し、見積作成と商品の可視性を向上。",
+        "商品グルーピング機能を開発。6つの新規画面と8つの機能モジュールを実装。",
+        "7つのバッチプロセスを実装し、バックエンド業務を自動化してデータの整合性を向上。"
+      ],
+      "stack": ["Java", "JavaScript", "jQuery", "Ajax", "Bootstrap", "JSF", "SVN", "DataSpider", "FastApp", "TeraTerm"],
+      "links": [{ "href": "#", "label": "プロジェクト概要" }],
+      "kpis": [
+        { "label": "役割", "value": "プログラマー" },
+        { "label": "月次デプロイ", "value": "21" },
+        { "label": "チームメンバー", "value": "14" }
+      ]
+    },
+    {
+      "role": "物流会社向けシステム開発",
+      "company": "ADHR株式会社",
+      "period": "2022年05月 — 2022年12月",
+      "location": "東京、日本",
+      "type": "正社員",
+      "summary": "物流システム開発を詳細設計からテストまでサポート。在庫追跡、出荷調整、業務フローを効率化。",
+      "achievements": [
+        "物流ワークフローをサポートする詳細設計書を作成・改善。",
+        "機能テストと統合テストを実施し、システムの信頼性とデータ整合性を検証。",
+        "開発サイクル全体でトレーサビリティとドキュメント品質を向上。"
+      ],
+      "stack": ["Java", "JavaScript", "jQuery", "Spring", "SQL", "Eclipse", "Git", "Tomcat"],
+      "links": [{ "href": "#", "label": "プロジェクト概要" }],
+      "kpis": [
+        { "label": "役割", "value": "プログラマー" },
+        { "label": "月次デプロイ", "value": "8" },
+        { "label": "チームメンバー", "value": "25" }
+      ]
+    },
+    {
+      "role": "銀行システム開発",
+      "company": "ADHR株式会社",
+      "period": "2021年08月 — 2022年04月",
+      "location": "東京、日本",
+      "type": "正社員",
+      "summary": "銀行システム開発において、詳細設計の改善とエンドツーエンドテストをサポート。口座、取引、コンプライアンスなどのコア業務を対象。",
+      "achievements": [
+        "開発チームとQAチームと協力し、設計からテストへのスムーズな移行を実現。",
+        "ユニット・統合テストを含むバックエンド開発とテストをリード。",
+        "テストケースを実行・検証し、システムの信頼性と機能的正確性を確認。",
+        "テストサイクル全体でドキュメント更新と欠陥追跡をサポート。"
+      ],
+      "stack": ["Java", "JavaScript", "jQuery", "Spring Boot", "MySQL", "Eclipse", "SVN", "Bootstrap"],
+      "links": [{ "href": "#", "label": "プロジェクト概要" }],
+      "kpis": [
+        { "label": "役割", "value": "プログラマー" },
+        { "label": "月次デプロイ", "value": "9" },
+        { "label": "チームメンバー", "value": "10" }
+      ]
+    },
+    {
+      "role": "コンビニエンスストア会社向けWebサイトリニューアル",
+      "company": "ADHR株式会社",
+      "period": "2021年04月 — 2021年08月",
+      "location": "東京、日本",
+      "type": "正社員",
+      "summary": "コンビニエンスストアのWebサイトを刷新し、UX、モバイル対応、商品の可視性を向上。ナビゲーションを効率化し、クロスデバイスパフォーマンスを最適化。",
+      "achievements": [
+        "Spring BootでREST APIを設計・リリースし、P99レイテンシを約30％改善。",
+        "ユニット・統合テストを含むバックエンド開発とテストをリード。",
+        "高性能なWebアプリケーションを実現。",
+        "チームコラボレーションに注力。"
+      ],
+      "stack": ["Java", "JavaScript", "Spring Boot", "PostgreSQL", "Eclipse", "Git", "Tomcat"],
+      "links": [{ "href": "#", "label": "プロジェクト概要" }],
+      "kpis": [
+        { "label": "役割", "value": "テスター" },
+        { "label": "月次デプロイ", "value": "6" },
+        { "label": "チームメンバー", "value": "6" }
+      ]
+    }
+  ]
+}

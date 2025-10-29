@@ -4,6 +4,7 @@ import {
   Code2, Server, Database, Cloud, Wrench, GitBranch, Terminal, Workflow
 } from "lucide-react";
 import { createLucideIcon } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 // TODO: replace the placeholder paths below with the official SVG paths
 export const Asteria = createLucideIcon("Asteria", [
@@ -92,16 +93,32 @@ const categories = [
 ];
 
 export default function Skills() {
+  const { language } = useLanguage();
+  // Get localized text
+  const text = {
+    en: {
+      title: "Skills",
+      subtit: "Technologies",
+      subtitle: "A snapshot of what I use to build and ship backend systems."
+    },
+    jp: {
+      title: "スキル",
+      subtit: "テクノロジー",
+      subtitle: "バックエンド システムの構築と出荷に使用しているもののスナップショットです。"
+    }
+  };
+
+  const { title, subtit, subtitle } = text[language] || text.en;
   return (
-    <section id="skills" className="skills skills-scope bg-gradient-hero text-white py-5">
+    <section id="skills" className="skills skills-scope bg-gradient-hero text-white py-4">
       <div className="container">
         <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
           {/* Heading */}
           <div className="text-center mb-4">
             <h2 className="display-6 fw-bold mb-2">
-              Skills & <span className="text-info">Technologies</span>
+              {title} <span className="text-info">&amp; {subtit}</span>
             </h2>
-            <p className="text-white-50 mb-0">A snapshot of what I use to build and ship backend systems.</p>
+            <p className="text-white-50 mb-0">{subtitle}</p>
           </div>
 
           {/* Tech pills */}
@@ -117,7 +134,6 @@ export default function Skills() {
                 className="tech-pill"
               >
                 {t}
-                <span className="pill-shine" />
               </motion.span>
             ))}
           </div>
@@ -190,20 +206,6 @@ export default function Skills() {
           backdrop-filter: blur(8px);
           -webkit-backdrop-filter: blur(8px);
           overflow: hidden;
-        }
-        .skills-scope .tech-pill .pill-shine {
-          position: absolute;
-          top: 0; left: -140%;
-          width: 60%; height: 100%;
-          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
-          transform: skewX(-20deg);
-          animation: skills-pillSweep 4s ease-in-out infinite;
-          pointer-events: none;
-        }
-        @keyframes skills-pillSweep {
-          0% { left: -140%; }
-          55% { left: 140%; }
-          100% { left: 140%; }
         }
 
         /* Skill progress bar */

@@ -21,7 +21,10 @@ code {
 @media (min-width: 992px) { .avatar { width: 240px; } }
 
 /* Optional: smooth anchor scrolling */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* Offset for fixed navbar */
+}
 
 
 

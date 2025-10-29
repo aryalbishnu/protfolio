@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import {
   Award, BadgeCheck, Calendar, Building2, Link2, ExternalLink
 } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 import allCertificates from "./text/certificate.json";
 
 const container = {
@@ -18,10 +19,31 @@ const card = {
   show:   { opacity: 1, y: 0, scale: 1, transition: { duration: 0.35, ease: "easeOut" } },
 };
 
-export default function Certificates({ items = allCertificates }) {
+export default function Certificates() {
+  const { language } = useLanguage();
+
+  // Get certificates based on language
+  const items = allCertificates[language] || allCertificates.en;
+
+  // Get localized text
+  const text = {
+    en: {
+      title: "Certificates",
+      subtit: "Badges",
+      subtitle: "Proof of skills and continuous learning."
+    },
+    jp: {
+      title: "証明書",
+      subtit: "バッジ",
+      subtitle: "スキルと継続的な学習の証明"
+    }
+  };
+
+  const { title, subtit, subtitle } = text[language] || text.en;
+
   return (
-    <section id="certificates" className="certificates cert-scope bg-gradient-hero text-white py-5">
-      <div className="container">
+    <section id="certificates" className="certificates cert-scope bg-gradient-hero text-white py-4">
+      <div className="container" key={language}>
         {/* Heading with entrance */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -31,52 +53,38 @@ export default function Certificates({ items = allCertificates }) {
           className="text-center mb-4"
         >
           <h2 className="display-6 fw-bold mb-2">
-            Certificates <span className="text-info">&amp; Badges</span>
+            {title} <span className="text-info">&amp; {subtit}</span>
           </h2>
-          <p className="text-white-50 mb-0">Proof of skills and continuous learning.</p>
+          <p className="text-white-50 mb-0">{subtitle}</p>
         </motion.div>
 
         {/* Grid */}
         <motion.div
+          key={`certs-${language}`}
           variants={container}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          animate="show"
           className="row g-4"
         >
           {items.map((c, i) => (
-            <div key={c.title + i} className="col-12 col-md-6 col-lg-4 d-flex">
+            <div key={`${language}-${c.title}-${i}`} className="col-12 col-md-6 col-lg-4 d-flex">
               <motion.div
                 variants={card}
                 whileHover={{ y: -6, scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
                 className="cert-card glass p-4 h-100 w-100 position-relative overflow-hidden"
               >
-                {/* Shine sweep */}
-                <span className="shine" aria-hidden />
 
-                {/* Corner ribbon (animated in) */}
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.25, delay: 0.05 }}
-                  className="ribbon"
-                >
-                  <BadgeCheck size={14} className="me-1" /> Verified
-                </motion.span>
-
-                <div className="d-flex align-items-start justify-content-between mb-2">
-                  <motion.h3
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.35, delay: 0.05 }}
-                    className="h5 fw-bold mb-0 d-flex align-items-center"
-                  >
-                    <Award size={18} className="me-2 text-info" />
-                    {c.title}
-                  </motion.h3>
+                {/* Header */}
+                <div className="d-flex align-items-start gap-2 mb-2">
+                  <div className="d-flex align-items-center flex-grow-1 min-width-0">
+                    <Award size={18} className="text-info me-2 flex-shrink-0" />
+                    <h3 className="h5 fw-bold mb-0 text-truncate-multiline">{c.title}</h3>
+                  </div>
+                  <span className="badge bg-info bg-opacity-25 text-info border border-info border-opacity-50 flex-shrink-0 align-self-start">
+                    <BadgeCheck size={14} className="me-1" />
+                    Verified
+                  </span>
                 </div>
 
                 <div className="text-white-50 small mb-3 d-flex flex-wrap gap-3">
@@ -99,32 +107,6 @@ export default function Certificates({ items = allCertificates }) {
                     </motion.span>
                   ))}
                 </div>
-
-                {/* Actions */}
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.25, delay: 0.05 }}
-                  className="d-flex gap-2"
-                >
-                  <a
-                    href={c.verifyUrl || "#"}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn btn-sm btn-light d-inline-flex align-items-center gap-2"
-                  >
-                    <ExternalLink size={16} /> Verify
-                  </a>
-                  <a
-                    href={c.verifyUrl || "#"}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn btn-sm btn-outline-light d-inline-flex align-items-center gap-2"
-                  >
-                    <Link2 size={16} /> View
-                  </a>
-                </motion.div>
               </motion.div>
             </div>
           ))}
@@ -142,22 +124,6 @@ export default function Certificates({ items = allCertificates }) {
           backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
         }
 
-        /* Shine sweep across card */
-        .cert-scope .shine {
-          position: absolute;
-          top: 0; left: -120%;
-          width: 60%; height: 100%;
-          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
-          transform: skewX(-20deg);
-          animation: cert-sweep 3.8s ease-in-out infinite;
-          pointer-events: none;
-        }
-        @keyframes cert-sweep {
-          0% { left: -120%; }
-          55% { left: 140%; }
-          100% { left: 140%; }
-        }
-
         .cert-scope .chip {
           padding: 6px 10px; border-radius: 9999px;
           border: 1px solid rgba(255,255,255,0.18);
@@ -166,13 +132,29 @@ export default function Certificates({ items = allCertificates }) {
           backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
         }
 
-        .cert-scope .ribbon {
-          position: absolute; top: 12px; right: 12px;
-          font-size: .75rem; padding: 6px 10px;
-          border-radius: 9999px; color: #e6fbff;
-          background: rgba(34,211,238,0.18);
-          border: 1px solid rgba(34,211,238,0.35);
-          display: inline-flex; align-items: center;
+        /* Ensure badge stays on right side */
+        .cert-scope .min-width-0 {
+          min-width: 0;
+        }
+
+        .cert-scope .text-truncate-multiline {
+          overflow-wrap: break-word;
+          word-break: break-word;
+          hyphens: auto;
+        }
+
+        /* Badge positioning */
+        .cert-scope .badge {
+          white-space: nowrap;
+          margin-top: 2px;
+        }
+
+        /* Responsive badge adjustments */
+        @media (max-width: 575.98px) {
+          .cert-scope .badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+          }
         }
       `}</style>
     </section>

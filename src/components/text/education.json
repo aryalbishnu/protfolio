@@ -1,46 +1,95 @@
-[
-  {
-    "degree": "Faculty of Arts and Science",
-    "school": "The Open University of Japan",
-    "period": "2025 — Present",
-    "location": "Chiba, Japan",
-    "details": [
-      "Spring Boot, Java, Python, REST best practices, Microservices",
-      "Docker, Linux, Git, CI/CD (GitHub Actions/Jenkins)"
-    ],
-    "badge": "Ongoing"
-  },
-  {
-    "degree": "International IT Department",
-    "school": "Nihon International IT College",
-    "period": "2018 — 2021",
-    "location": "Chiba, Japan",
-    "details": [
-      "Core: Data Structures, Databases, Networks, OS, Java, Php",
-      "Capstone: FinTech backend API with security best practices"
-    ],
-    "badge": "Honors"
-  },
-  {
-    "degree": "Language School",
-    "school": "Only One Japanese Language School",
-    "period": "2016 — 2018",
-    "location": "Chiba, Japan",
-    "details": [
-      "Core: Japanese Language",
-      "Capstone: Language best practice"
-    ],
-    "badge": "Honors"
-  },
-  {
-    "degree": "Computer Science",
-    "school": "Future Brighter Higher Secondary School",
-    "period": "2012 — 2014",
-    "location": "Baglung, Nepal",
-    "details": [
-      "Core: Account, Math, Computer",
-      "Capstone: C++, Math best practices"
-    ],
-    "badge": "Honors"
-  }
-]
+{
+  "en": [
+    {
+      "degree": "Faculty of Arts and Science",
+      "school": "The Open University of Japan",
+      "period": "2025 — Present",
+      "location": "Chiba, Japan",
+      "details": [
+        "Spring Boot, Java, Python, REST best practices, Microservices",
+        "Docker, Linux, Git, CI/CD (GitHub Actions/Jenkins)"
+      ],
+      "badge": "Ongoing"
+    },
+    {
+      "degree": "International IT Department",
+      "school": "Nihon International IT College",
+      "period": "2018 — 2021",
+      "location": "Chiba, Japan",
+      "details": [
+        "Core: Data Structures, Databases, Networks, OS, Java, Php",
+        "Capstone: FinTech backend API with security best practices"
+      ],
+      "badge": "Honors"
+    },
+    {
+      "degree": "Language School",
+      "school": "Only One Japanese Language School",
+      "period": "2016 — 2018",
+      "location": "Chiba, Japan",
+      "details": [
+        "Core: Japanese Language",
+        "Capstone: Language best practice"
+      ],
+      "badge": "Honors"
+    },
+    {
+      "degree": "Computer Science",
+      "school": "Future Brighter Higher Secondary School",
+      "period": "2012 — 2014",
+      "location": "Baglung, Nepal",
+      "details": [
+        "Core: Account, Math, Computer",
+        "Capstone: C++, Math best practices"
+      ],
+      "badge": "Honors"
+    }
+  ],
+
+  "jp": [
+    {
+      "degree": "教養学部",
+      "school": "放送大学",
+      "period": "2025年 — 現在",
+      "location": "千葉、日本",
+      "details": [
+        "Spring Boot、Java、Python、RESTベストプラクティス、マイクロサービス",
+        "Docker、Linux、Git、CI/CD（GitHub Actions/Jenkins）"
+      ],
+      "badge": "進行中"
+    },
+    {
+      "degree": "国際IT学科",
+      "school": "日本国際ITカレッジ",
+      "period": "2018年 — 2021年",
+      "location": "千葉、日本",
+      "details": [
+        "基礎：データ構造、データベース、ネットワーク、OS、Java、Php",
+        "卒業研究：セキュリティベストプラクティスを用いたFinTechバックエンドAPI"
+      ],
+      "badge": "優秀"
+    },
+    {
+      "degree": "日本語学校",
+      "school": "オンリーワン日本語学校",
+      "period": "2016年 — 2018年",
+      "location": "千葉、日本",
+      "details": [
+        "基礎：日本語",
+        "卒業研究：言語運用のベストプラクティス"
+      ],
+      "badge": "優秀"
+    },
+    {
+      "degree": "コンピュータサイエンス",
+      "school": "フューチャーブライター高等学校",
+      "period": "2012年 — 2014年",
+      "location": "バグルン、ネパール",
+      "details": [
+        "基礎：会計、数学、コンピュータ",
+        "卒業研究：C++、数学のベストプラクティス"
+      ],
+      "badge": "優秀"
+    }
+  ]
+}

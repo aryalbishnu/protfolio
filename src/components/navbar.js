@@ -1,7 +1,7 @@
 // Navbar.jsx
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Rocket, Languages, Sun, Moon } from "lucide-react";
+import { Menu, X, Rocket, Languages, FileText } from "lucide-react";
 
 const defaultLinks = [
   { href: "#hero", label: "Home" },
@@ -19,13 +19,34 @@ export default function Navbar({
   onLanguageChange = () => {},
   languages = [
     { code: "en", label: "English" },
-    { code: "ja", label: "日本語" },
+    { code: "jp", label: "日本語" },
   ],
 }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState("dark");
   const [langOpen, setLangOpen] = useState(false);
+  const [cvOpen, setCvOpen] = useState(false);
+
+  const cvRef = useRef(null);
+  const langRef = useRef(null);
+
+  // Get localized text for CV buttons
+  const text = {
+    en: {
+      download: "Download",
+      view: "View",
+      downloadCV: "Download CV",
+      viewCV: "View CV"
+    },
+    jp: {
+      download: "ダウンロード",
+      view: "表示",
+      downloadCV: "CVをダウンロード",
+      viewCV: "CVを表示"
+    }
+  };
+
+  const cvText = text[lang] || text.en;
 
   useEffect(() => {
     const onScroll = () => setScrolled((window.scrollY || 0) > 10);
@@ -34,12 +55,71 @@ export default function Navbar({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (cvRef.current && !cvRef.current.contains(event.target)) {
+        setCvOpen(false);
+      }
+      if (langRef.current && !langRef.current.contains(event.target)) {
+        setLangOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const currentLang = languages.find((l) => l.code === lang) || languages[0];
 
   const selectLang = (code) => {
     onLanguageChange(code);
     setLangOpen(false);
     setOpen(false);
+  };
+
+  const handleCvAction = (action) => {
+    // Import the PDF from src/components/text
+    const cvPath = require("./text/Bishnu_Aryal_CV.pdf");
+    if (action === "download") {
+      const link = document.createElement("a");
+      link.href = cvPath;
+      link.download = "Bishnu_Aryal_CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else if (action === "view") {
+      window.open(cvPath, "_blank");
+    }
+    // Don't close the CV menu or mobile menu after clicking
+  };
+
+  const toggleCvMenu = () => {
+    setCvOpen((v) => !v);
+    setLangOpen(false); // Close language menu when CV menu opens
+  };
+
+  const toggleLangMenu = () => {
+    setLangOpen((v) => !v);
+    setCvOpen(false); // Close CV menu when language menu opens
+  };
+
+  // Smooth scroll handler with navbar offset
+  const handleSmoothScroll = (e, href) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      const navbarHeight = 70; // Approximate navbar height
+      const targetPosition = targetElement.offsetTop - navbarHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+    }
   };
 
   return (
@@ -51,7 +131,7 @@ export default function Navbar({
         className={`nav-glass ${scrolled ? "nav-scrolled" : ""}`}
       >
         <div className="container d-flex align-items-center justify-content-between gap-2">
-          <a href="#hero" className="brand d-inline-flex align-items-center gap-2">
+          <a href="#hero" onClick={(e) => handleSmoothScroll(e, "#hero")} className="brand d-inline-flex align-items-center gap-2">
             <Rocket size={18} className="text-info" />
             <span className="fw-bold">{brand}</span>
           </a>
@@ -59,7 +139,7 @@ export default function Navbar({
           <ul className="d-none d-lg-flex align-items-center gap-3 mb-0">
             {links.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="nav-link d-inline-flex align-items-center">
+                <a href={l.href} onClick={(e) => handleSmoothScroll(e, l.href)} className="nav-link d-inline-flex align-items-center">
                   <span>{l.label}</span>
                   <span className="u" />
                 </a>
@@ -69,10 +149,52 @@ export default function Navbar({
 
           <div className="d-flex align-items-center gap-2">
 
-            <div className="d-none d-lg-block position-relative">
+            <div className="d-none d-lg-block position-relative" ref={cvRef}>
               <button
                 className="btn btn-sm btn-outline-light d-inline-flex align-items-center gap-1"
-                onClick={() => setLangOpen((v) => !v)}
+                onClick={toggleCvMenu}
+                aria-haspopup="listbox"
+                aria-expanded={cvOpen}
+              >
+                <FileText size={16} />
+                CV
+              </button>
+
+              <AnimatePresence>
+                {cvOpen && (
+                  <motion.ul
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18 }}
+                    className="lang-menu glass p-2 m-0"
+                    role="listbox"
+                  >
+                    <li>
+                      <button
+                        className="lang-item"
+                        onClick={() => handleCvAction("download")}
+                      >
+                        {cvText.download}
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        className="lang-item"
+                        onClick={() => handleCvAction("view")}
+                      >
+                        {cvText.view}
+                      </button>
+                    </li>
+                  </motion.ul>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <div className="d-none d-lg-block position-relative" ref={langRef}>
+              <button
+                className="btn btn-sm btn-outline-light d-inline-flex align-items-center gap-1"
+                onClick={toggleLangMenu}
                 aria-haspopup="listbox"
                 aria-expanded={langOpen}
               >
@@ -108,14 +230,6 @@ export default function Navbar({
             </div>
 
             <button
-              className="btn btn-sm btn-outline-light d-none d-lg-inline-flex"
-              onClick={() => setTheme((t) => (t === "light" ? "dark" : "light"))}
-              aria-label="Toggle theme"
-            >
-              {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
-            </button>
-
-            <button
               className="btn btn-sm btn-light d-inline-flex d-lg-none"
               onClick={() => setOpen((v) => !v)}
               aria-label="Toggle navigation"
@@ -138,12 +252,27 @@ export default function Navbar({
               <ul className="list-unstyled d-grid gap-2 mb-3">
                 {links.map((l) => (
                   <li key={l.href}>
-                    <a href={l.href} className="nav-link py-1 px-1" onClick={() => setOpen(false)}>
+                    <a href={l.href} className="nav-link py-1 px-1" onClick={(e) => handleSmoothScroll(e, l.href)}>
                       {l.label}
                     </a>
                   </li>
                 ))}
               </ul>
+
+              <div className="d-flex flex-wrap gap-2 mb-2">
+                <button
+                  className="btn btn-sm btn-outline-light flex-grow-1"
+                  onClick={() => handleCvAction("download")}
+                >
+                  {cvText.downloadCV}
+                </button>
+                <button
+                  className="btn btn-sm btn-outline-light flex-grow-1"
+                  onClick={() => handleCvAction("view")}
+                >
+                  {cvText.viewCV}
+                </button>
+              </div>
 
               <div className="d-flex flex-wrap gap-2">
                 {languages.map((l) => (
@@ -160,7 +289,6 @@ export default function Navbar({
           )}
         </AnimatePresence>
 
-        <span className="shine" aria-hidden />
       </motion.nav>
 
       <style>{`
@@ -222,15 +350,6 @@ export default function Navbar({
         }
         .lang-item:hover { background: rgba(255,255,255,0.06); }
         .lang-item.active { background: rgba(34,211,238,0.15); }
-
-        .nav-glass .shine {
-          position: absolute; top: 0; left: -120%;
-          width: 60%; height: 100%;
-          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.16), transparent);
-          transform: skewX(-20deg); animation: nav-sweep 4s ease-in-out infinite; pointer-events: none;
-        }
-          
-        @keyframes nav-sweep { 0%{left:-120%} 55%{left:140%} 100%{left:140%} }
 
         @media (max-width: 991.98px) {
           .nav-glass .container { min-height: 56px; }

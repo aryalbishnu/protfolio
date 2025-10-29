@@ -4,6 +4,7 @@ import {
   Briefcase, Building2, Calendar, MapPin, Award, Sparkles, GitBranch, Server, Database
 } from "lucide-react";
 import workExperience from "./text/workExperience.json";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const container = {
   hidden: { opacity: 0, y: 18 },
@@ -18,14 +19,33 @@ const card = {
   show:   { opacity: 1, y: 0, scale: 1, transition: { duration: 0.35, ease: "easeOut" } },
 };
 
-export default function WorkExperience({
-  items = workExperience,
-  title = "Professional Work Experience",
-  subtitle = "Impact-focused roles, shipped with quality and speed.",
-}) {
+export default function WorkExperience() {
+
+    const { language } = useLanguage();
+
+    // Get work experience data based on language
+    const items = workExperience[language] || workExperience.en;
+  
+    // Get localized text
+    const text = {
+      en: {
+        title: "Professional Work Experience",
+        subtit: "Training",
+        subtitle: "Impact-focused roles, shipped with quality and speed.",
+        achievement: "Key Achievements",
+      },
+      jp: {
+        title: "専門的な職歴",
+        subtit: "トレーニング",
+        subtitle: "成果に重きを置き、品質とスピードを両立して成果物を提供しています。",
+        achievement: "主な成果",
+      }
+    };
+  
+    const { title, subtit, subtitle, achievement } = text[language] || text.en;
   return (
-    <section id="experience" className="experience exp-scope bg-gradient-hero text-white py-5">
-      <div className="container">
+    <section id="experience" className="experience exp-scope bg-gradient-hero text-white py-4">
+      <div className="container" key={language}>
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -35,38 +55,36 @@ export default function WorkExperience({
           className="text-center mb-4"
         >
           <h2 className="display-6 fw-bold mb-2">
-            {title} <span className="text-info">& Impact</span>
+            {title} <span className="text-info">& { subtit }</span>
           </h2>
           <p className="text-white-50 mb-0">{subtitle}</p>
         </motion.div>
 
         {/* Cards grid */}
         <motion.div
+          key={`exp-${language}`}
           variants={container}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          animate="show"
           className="row g-4"
         >
           {items.map((job, idx) => (
-            <div key={`${job.role}-${idx}`} className="col-12 col-lg-6 d-flex">
+            <div key={`${language}-${job.role}-${idx}`} className="col-12 col-lg-6 d-flex">
               <motion.div
                 variants={card}
                 whileHover={{ y: -6, scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
                 className="glass p-4 h-100 w-100 position-relative overflow-hidden"
               >
-                {/* Shine sweep */}
-                <span className="shine" aria-hidden />
 
                 {/* Header */}
-                <div className="d-flex flex-wrap align-items-center justify-content-between">
-                  <div className="d-flex align-items-center">
-                    <Briefcase size={18} className="text-info me-2" />
-                    <h3 className="h5 fw-bold mb-0">{job.role}</h3>
+                <div className="d-flex align-items-start gap-2 mb-2">
+                  <div className="d-flex align-items-center flex-grow-1 min-width-0">
+                    <Briefcase size={18} className="text-info me-2 flex-shrink-0" />
+                    <h3 className="h5 fw-bold mb-0 text-truncate-multiline">{job.role}</h3>
                   </div>
                   {job.type && (
-                    <span className="badge bg-info bg-opacity-25 text-info border border-info border-opacity-50">
+                    <span className="badge bg-info bg-opacity-25 text-info border border-info border-opacity-50 flex-shrink-0 align-self-start">
                       <Sparkles size={14} className="me-1" />
                       {job.type}
                     </span>
@@ -101,7 +119,7 @@ export default function WorkExperience({
                 {job.achievements?.length > 0 && (
                   <>
                     <h4 className="h6 fw-bold d-flex align-items-center mb-2">
-                      <Award size={16} className="me-2 text-info" /> Key Achievements
+                      <Award size={16} className="me-2 text-info" /> { achievement }
                     </h4>
                     <ul className="mb-3 list-unstyled d-grid gap-2">
                       {job.achievements.map((a, i) => (
@@ -167,26 +185,36 @@ export default function WorkExperience({
           backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
         }
 
-        /* Shine sweep */
-        .exp-scope .shine {
-          position: absolute; top: 0; left: -120%;
-          width: 60%; height: 100%;
-          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.22), transparent);
-          transform: skewX(-20deg);
-          animation: exp-sweep 3.8s ease-in-out infinite;
-          pointer-events: none;
-        }
-        @keyframes exp-sweep {
-          0% { left: -120%; }
-          55% { left: 140%; }
-          100% { left: 140%; }
-        }
-
         .exp-scope .bullet {
           width: 10px; height: 10px; border-radius: 50%;
           margin-top: 6px; flex: 0 0 auto;
           background: linear-gradient(135deg, #22d3ee, #6366f1);
           box-shadow: 0 0 0 4px rgba(99,102,241,0.18);
+        }
+
+        /* Ensure badge stays on right side */
+        .exp-scope .min-width-0 {
+          min-width: 0;
+        }
+
+        .exp-scope .text-truncate-multiline {
+          overflow-wrap: break-word;
+          word-break: break-word;
+          hyphens: auto;
+        }
+
+        /* Badge positioning */
+        .exp-scope .badge {
+          white-space: nowrap;
+          margin-top: 2px;
+        }
+
+        /* Responsive badge adjustments */
+        @media (max-width: 575.98px) {
+          .exp-scope .badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+          }
         }
       `}</style>
     </section>

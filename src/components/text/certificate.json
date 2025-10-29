@@ -1,30 +1,62 @@
-[
-  {
-    "title": "Driver's License",
-    "issuer": "National Police Agency",
-    "date": "April 2022",
-    "verifyUrl": "#",
-    "skills": ["Car"]
-  },
-  {
-    "title": "Japanese Language Test N2",
-    "issuer": "Japan Educational Exchanges and Services",
-    "date": "Dec 2020",
-    "verifyUrl": "#",
-    "skills": ["Reading", "Writing", "Listening"]
-  },
-  {
-    "title": "Java programming Level 3",
-    "issuer": "Certify Information Processing Skills Certification Committee",
-    "date": "Feb 2020",
-    "verifyUrl": "#",
-    "skills": ["Java", "Java syntax and structure", "classes and methods", "Object-Oriented Concepts"]
-  },
-  {
-    "title": "ICT Proficiency Test Level 4",
-    "issuer": "ICT Proficiency Certification Association",
-    "date": "Jan 2020",
-    "verifyUrl": "#",
-    "skills": ["Hardware", "software", "Operating Systems"]
-  }
-]
+{
+  "en": [
+    {
+      "title": "Driver's License",
+      "issuer": "National Police Agency",
+      "date": "April 2022",
+      "verifyUrl": "#",
+      "skills": ["Car"]
+    },
+    {
+      "title": "Japanese Language Test N2",
+      "issuer": "Japan Educational Exchanges and Services",
+      "date": "Dec 2020",
+      "verifyUrl": "#",
+      "skills": ["Reading", "Writing", "Listening"]
+    },
+    {
+      "title": "Java programming Level 3",
+      "issuer": "Certify Information Processing Skills Certification Committee",
+      "date": "Feb 2020",
+      "verifyUrl": "#",
+      "skills": ["Java", "Java Syntax and Structure", "Classes and Methods", "Object-Oriented Concepts"]
+    },
+    {
+      "title": "ICT Proficiency Test Level 4",
+      "issuer": "ICT Proficiency Certification Association",
+      "date": "Jan 2020",
+      "verifyUrl": "#",
+      "skills": ["Hardware", "Software", "Operating Systems"]
+    }
+  ],
+  "jp": [
+    {
+      "title": "運転免許証",
+      "issuer": "警察庁",
+      "date": "2022年4月",
+      "verifyUrl": "#",
+      "skills": ["車"]
+    },
+    {
+      "title": "日本語能力試験 N2",
+      "issuer": "日本国際教育支援協会",
+      "date": "2020年12月",
+      "verifyUrl": "#",
+      "skills": ["読解", "文章作成", "聴解"]
+    },
+    {
+      "title": "Javaプログラミング レベル3",
+      "issuer": "サーティファイ情報処理技能認定委員会",
+      "date": "2020年2月",
+      "verifyUrl": "#",
+      "skills": ["Java", "構文と文法", "クラスとメソッド", "オブジェクト指向"]
+    },
+    {
+      "title": "ICTプロフィシエンシーテスト レベル4",
+      "issuer": "ICTプロフィシエンシー認定協会",
+      "date": "2020年1月",
+      "verifyUrl": "#",
+      "skills": ["ハードウェア", "ソフトウェア", "オペレーティングシステム"]
+    }
+  ]
+}

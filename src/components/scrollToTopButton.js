@@ -41,7 +41,6 @@ export default function ScrollToTopButton({
             className="stt-btn d-inline-flex align-items-center justify-content-center"
             style={{ bottom, right }}
           >
-            <span className="shine" aria-hidden />
             <ArrowUp size={18} />
           </motion.button>
         )}
@@ -65,21 +64,6 @@ export default function ScrollToTopButton({
         }
         .stt-btn:hover { transform: translateY(-2px); }
         .stt-btn:active { transform: translateY(0); }
-
-        /* Shine sweep */
-        .stt-btn .shine {
-          position: absolute; top: 0; left: -140%;
-          width: 70%; height: 100%;
-          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.22), transparent);
-          transform: skewX(-20deg);
-          animation: stt-sweep 3.6s ease-in-out infinite;
-          pointer-events: none;
-        }
-        @keyframes stt-sweep {
-          0% { left: -140%; }
-          55% { left: 140%; }
-          100% { left: 140%; }
-        }
 
         /* Optional: hide when printing */
         @media print { .stt-btn { display: none; } }

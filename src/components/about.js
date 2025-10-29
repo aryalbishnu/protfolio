@@ -2,8 +2,45 @@ import { useEffect, useState } from "react";
 import { Briefcase, FolderOpen, Award } from "lucide-react";
 import profilePic from "../images/test.jpg";
 import { motion } from "framer-motion";
+import { useLanguage } from "../contexts/LanguageContext";
 
 function About() {
+
+      const { language } = useLanguage();
+        // Get localized text
+        const text = {
+          en: {
+            title: "About",
+            subtitle: "Me",
+            text1: "I’m a Java Developer with",
+            text2: "+ years of experience",
+            text3: "building backend systems. Passionate about ",
+            text4: "automation and cloud technologies",
+            text5: ", aiming to grow into a Python full-stack developer. ",
+            text6: "Currently at eSTACK Corporation,",
+            text7: " contributing to projects in banking, credit card systems, and management accounting.",
+            certificate: "Certificates",
+            project: "Projects",
+            year: "Years"
+          },
+          jp: {
+            title: "私に",
+            subtitle: "ついて",
+            text1: "私は、バックエンドシステムの開発に",
+            text2: "年以上の経験を持つ",
+            text3: "Java開発者です。",
+            text4: "自動化やクラウド技術に情熱を持ち、",
+            text5: "将来的にはPythonのフルスタック開発者として成長することを目指しています。",
+            text6: "現在は eSTACK株式会社 にて、",
+            text7: "銀行、クレジットカードシステム、管理会計などのプロジェクトに携わっています。",
+            certificate: "証明書",
+            project: "プロジェクト",
+            year: "年数"
+          }
+        };
+
+        const { title, subtitle, text1, text2, text3, text4, text5, text6, text7, certificate, project, year } = text[language] || text.en;
+
     // target values
     const targetValues = {
         years: 4,
@@ -52,12 +89,12 @@ function About() {
 
 
     return (
-        <section id="about" className="about bg-gradient-hero text-white py-5">
+        <section id="about" className="about bg-gradient-hero text-white py-4">
             <div className="container">
                 
                 <div className="text-center">
                     <h2 className="display-6 fw-bold mb-2">
-            About <span className="text-info"> Me</span>
+            { title } <span className="text-info"> { subtitle }</span>
           </h2>
                         </div>
                 <div className="row align-items-center gy-4">
@@ -76,11 +113,10 @@ function About() {
                     <div className="col-12 col-md-7 text-center text-md-start">
                         
                         <p className="lead mb-4">
-                            I’m a <strong className="text-info">Java Developer</strong> with{" "}
-                            <strong>{targetValues.years}+ years</strong> of experience building backend systems.
-                            Passionate about <strong className="text-info">automation</strong> and{" "}
-                            <strong className="text-info">cloud technologies</strong>, aiming to
-                            grow into a <strong>Python full-stack developer</strong>. Currently at eSTACK Corporation, contributing to projects in banking, credit card systems, and management accounting.
+                            { text1 } 
+                            <strong  className="text-info"> { targetValues.years }{ text2 }</strong> { text3 }
+                            <strong className="text-info">{ text4 }</strong>
+                            { text5 } <strong className="text-info"> { text6 } </strong> { text7 }
                         </p>
                     </div>
 
@@ -103,14 +139,10 @@ function About() {
                                 id="stat-card-accent"
                                 aria-label="Years of experience"
                             >
-                                {/* Glow ring */}
-                                <span className="glow-ring" />
-                                {/* Shine sweep */}
-                                <span className="shine" />
                                 <div className="fs-3 fw-bold fancy-number">{years}+</div>
                                 <div className="d-flex align-items-center small">
                                     <Briefcase className="me-2 text-info" />
-                                    Years
+                                    { year }
                                 </div>
                             </motion.div>
 
@@ -124,12 +156,10 @@ function About() {
                                 id="stat-card-accent"
                                 aria-label="Projects"
                             >
-                                <span className="glow-ring" />
-                                <span className="shine" />
                                 <div className="fs-3 fw-bold fancy-number">{projects}+</div>
                                 <div className="d-flex align-items-center small">
                                     <FolderOpen className="me-2 text-success" />
-                                    Projects
+                                    { project }
                                 </div>
                             </motion.div>
 
@@ -144,12 +174,10 @@ function About() {
                                 id="stat-card-accent"
                                 aria-label="Certificates"
                             >
-                                <span className="glow-ring" />
-                                <span className="shine" />
                                 <div className="fs-3 fw-bold fancy-number">{certificates}+</div>
                                 <div className="d-flex align-items-center small">
                                     <Award className="me-2 text-warning" />
-                                    Certificates
+                                    { certificate }
                                 </div>
                             </motion.div>
                         </motion.div>

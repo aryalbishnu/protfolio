@@ -1,9 +1,26 @@
 import { useEffect, useState } from "react";
 import profilePic from "../images/aryal.jpg";
+import { useLanguage } from "../contexts/LanguageContext";
 
 function Hero() {
-  const roles = ["Backend Developer", "Full-Stack Engineer", "Tech Enthusiast"];
   const [currentRole, setCurrentRole] = useState(0);
+
+  const { language } = useLanguage();
+    // Get localized text
+    const text = {
+      en: {
+        title: "Hi, I'm Bishnu Aryal",
+        roles: ["Backend Developer", "Full-Stack Engineer", "Tech Enthusiast"],
+        subtitle: "I build scalable backends, automate workflows,\n and create smooth user experiences with modern technologies."
+      },
+      jp: {
+        title: "こんにちは、アリヤル・ビシュヌです",
+        roles: ["バックエンド開発者", "フルスタックエンジニア", "テクノロジー愛好家"],
+        subtitle: "最新の技術を活用して、スケーラブルなバックエンドを構築し、\n ワークフローを自動化し、快適なユーザー体験を実現しています。"
+      }
+    };
+
+    const { title, roles, subtitle } = text[language] || text.en;
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -30,19 +47,18 @@ function Hero() {
           {/* Text */}
           <div className="col-12 col-md-7 text-center text-md-start">
             <h1 className="display-5 display-md-4 fw-bold mb-2">
-              Hi, I’m Bishnu Aryal
+              { title }
             </h1>
             <h2 className="h4 fw-light mb-3">{roles[currentRole]}</h2>
-            <p className="lead mb-4 mb-md-5">
-              I build scalable backends, automate workflows, and create smooth user
-              experiences with modern technologies.
+            <p className="lead mb-4 mb-md-5"  style={{ whiteSpace: "pre-line" }}>
+              {subtitle}
             </p>
             <div className="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
-              <a href="#projects" className="btn btn-light btn-lg shadow">
+              <a href="#experience" className="btn btn-light btn-lg shadow">
                 🚀 View Projects
               </a>
               <a
-                href="mailto:bishnu.aryal@estack.co.jp"
+                href="#contact"
                 className="btn btn-outline-light btn-lg shadow"
               >
                 📩 Contact Me
