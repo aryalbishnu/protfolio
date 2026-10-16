@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.75709204.css",
+    "main.js": "/static/js/main.4d4a524e.js",
+    "static/media/Bishnu_Aryal_CV.pdf": "/static/media/Bishnu_Aryal_CV.7f9ffccba2410b183c11.pdf",
+    "static/media/test.jpg": "/static/media/test.6ff40f2ad6bd3e9417d1.jpg",
+    "static/media/aws-summit-japan-2026.jpg": "/static/media/aws-summit-japan-2026.f2065d2afd3e3f448c7e.jpg",
+    "static/media/aryal.jpg": "/static/media/aryal.7da5da16428f04a644e8.jpg",
+    "static/media/aws-dva-c02-badge.jpg": "/static/media/aws-dva-c02-badge.851bafa71afcb6e78f00.jpg",
+    "static/media/genai-passport.jpg": "/static/media/genai-passport.011dd1619d2af7dd8443.jpg",
+    "index.html": "/index.html",
+    "main.75709204.css.map": "/static/css/main.75709204.css.map",
+    "main.4d4a524e.js.map": "/static/js/main.4d4a524e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.75709204.css",
+    "static/js/main.4d4a524e.js"
+  ]
+}
