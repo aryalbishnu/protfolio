@@ -5,8 +5,6 @@ import {
 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import allCertificates from "./text/certificate.json";
-import awsDvaBadge from "../images/aws-dva-c02-badge.jpg";
-import genAiPassport from "../images/genai-passport.jpg";
 
 // Maps the "image" key in certificate.json to an imported image
 const certImages = {
