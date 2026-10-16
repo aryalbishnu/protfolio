@@ -1,7 +1,7 @@
 // Certificates.jsx
 import { motion } from "framer-motion";
 import {
-  Award, BadgeCheck, Calendar, Building2, Link2, ExternalLink
+  Award, BadgeCheck, Calendar, Building2
 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import allCertificates from "./text/certificate.json";
