@@ -6,12 +6,6 @@ import {
 import { useLanguage } from "../contexts/LanguageContext";
 import allCertificates from "./text/certificate.json";
 
-// Maps the "image" key in certificate.json to an imported image
-const certImages = {
-  "aws-dva-c02": awsDvaBadge,
-  "genai-passport": genAiPassport,
-};
-
 const container = {
   hidden: { opacity: 0, y: 16 },
   show: {
@@ -80,13 +74,6 @@ export default function Certificates() {
                 whileTap={{ scale: 0.99 }}
                 className="cert-card glass p-4 h-100 w-100 position-relative overflow-hidden"
               >
-
-                {/* Certificate image */}
-                {certImages[c.image] && (
-                  <div className="cert-img-wrap mb-3">
-                    <img src={certImages[c.image]} alt={c.title} className="cert-img" loading="lazy" />
-                  </div>
-                )}
 
                 {/* Header */}
                 <div className="d-flex align-items-start gap-2 mb-2">
