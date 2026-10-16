@@ -17,7 +17,7 @@ function About() {
             text3: "building backend systems. Passionate about ",
             text4: "automation and cloud technologies",
             text5: ", aiming to grow into a Python full-stack developer. ",
-            text6: "Currently at eSTACK Corporation,",
+            text6: "Currently at Hanwha Japan,",
             text7: " contributing to projects in banking, credit card systems, and management accounting.",
             certificate: "Certificates",
             project: "Projects",
@@ -31,7 +31,7 @@ function About() {
             text3: "Java開発者です。",
             text4: "自動化やクラウド技術に情熱を持ち、",
             text5: "将来的にはPythonのフルスタック開発者として成長することを目指しています。",
-            text6: "現在は eSTACK株式会社 にて、",
+            text6: "現在は ハンファジャパン株式会社 にて、",
             text7: "銀行、クレジットカードシステム、管理会計などのプロジェクトに携わっています。",
             certificate: "証明書",
             project: "プロジェクト",
@@ -45,7 +45,7 @@ function About() {
     const targetValues = {
         years: 4,
         projects: 10,
-        certificates: 5,
+        certificates: 6,
     };
 
     const container = {

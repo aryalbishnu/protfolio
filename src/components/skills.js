@@ -70,7 +70,7 @@ const categories = [
     skills: [
       { name: "Docker", level: 76 },
       { name: "Linux", level: 60 },
-      { name: "AWS (EC2/S3/RDS)", level: 40 },
+      { name: "AWS (DVA-C02)", level: 70 },
       { name: "CI/CD (GitHub Actions/Jenkins)", level: 80 },
     ],
   },
@@ -153,7 +153,7 @@ export default function Skills() {
                   </div>
 
                   <div className="d-grid gap-3">
-                    {cat.skills.map(({ name, level, icon }) => (
+                    {cat.skills.map(({ name, level, icon, detail }) => (
                       <div key={name}>
                         <div className="d-flex justify-content-between align-items-center mb-1 small">
                           <div className="d-flex align-items-center">
@@ -162,6 +162,7 @@ export default function Skills() {
                           </div>
                           <span className="text-white-50">{level}%</span>
                         </div>
+                        {detail && <div className="skill-detail text-white-50 mb-1">{detail}</div>}
                         <div className="skill-bar">
                           <motion.span
                             initial={{ width: 0 }}
@@ -206,6 +207,11 @@ export default function Skills() {
           backdrop-filter: blur(8px);
           -webkit-backdrop-filter: blur(8px);
           overflow: hidden;
+        }
+
+        .skills-scope .skill-detail {
+          font-size: 0.75rem;
+          line-height: 1.3;
         }
 
         /* Skill progress bar */

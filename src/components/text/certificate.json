@@ -1,62 +1,148 @@
 {
   "en": [
     {
+      "title": "Generative AI Passport (生成AIパスポート)",
+      "issuer": "Generative AI Utilization Association (GUGA)",
+      "date": "Sep 2026",
+      "verifyUrl": "#",
+      "image": "genai-passport",
+      "skills": [
+        "Generative AI",
+        "Prompt Engineering",
+        "AI Ethics & Risk",
+        "AI Copyright & Law"
+      ]
+    },
+    {
+      "title": "Microsoft AI-901: Azure AI Fundamentals",
+      "issuer": "Microsoft",
+      "date": "2026",
+      "verifyUrl": "#",
+      "skills": [
+        "Azure AI",
+        "Machine Learning",
+        "Generative AI",
+        "Responsible AI"
+      ]
+    },
+    {
+      "title": "AWS Certified Developer – Associate (DVA-C02)",
+      "issuer": "Amazon Web Services",
+      "date": "2026",
+      "verifyUrl": "#",
+      "image": "aws-dva-c02",
+      "skills": [
+        "AWS Lambda",
+        "DynamoDB",
+        "API Gateway",
+        "CI/CD",
+        "IAM & Security"
+      ]
+    },
+    {
       "title": "Driver's License",
       "issuer": "National Police Agency",
       "date": "April 2022",
       "verifyUrl": "#",
-      "skills": ["Car"]
+      "skills": [
+        "Car"
+      ]
     },
     {
       "title": "Japanese Language Test N2",
       "issuer": "Japan Educational Exchanges and Services",
       "date": "Dec 2020",
       "verifyUrl": "#",
-      "skills": ["Reading", "Writing", "Listening"]
+      "skills": [
+        "Reading",
+        "Writing",
+        "Listening"
+      ]
     },
     {
       "title": "Java programming Level 3",
       "issuer": "Certify Information Processing Skills Certification Committee",
       "date": "Feb 2020",
       "verifyUrl": "#",
-      "skills": ["Java", "Java Syntax and Structure", "Classes and Methods", "Object-Oriented Concepts"]
-    },
-    {
-      "title": "ICT Proficiency Test Level 4",
-      "issuer": "ICT Proficiency Certification Association",
-      "date": "Jan 2020",
-      "verifyUrl": "#",
-      "skills": ["Hardware", "Software", "Operating Systems"]
+      "skills": [
+        "Java",
+        "Java Syntax and Structure",
+        "Classes and Methods",
+        "Object-Oriented Concepts"
+      ]
     }
   ],
   "jp": [
+    {
+      "title": "生成AIパスポート",
+      "issuer": "生成AI活用普及協会（GUGA）",
+      "date": "2026年9月",
+      "verifyUrl": "#",
+      "image": "genai-passport",
+      "skills": [
+        "生成AI",
+        "プロンプトエンジニアリング",
+        "AIリスク・倫理",
+        "著作権・法律"
+      ]
+    },
+    {
+      "title": "Microsoft AI-901: Azure AI Fundamentals",
+      "issuer": "マイクロソフト",
+      "date": "2026年",
+      "verifyUrl": "#",
+      "skills": [
+        "Azure AI",
+        "機械学習",
+        "生成AI",
+        "責任あるAI"
+      ]
+    },
+    {
+      "title": "AWS認定 デベロッパー – アソシエイト（DVA-C02）",
+      "issuer": "アマゾン ウェブ サービス",
+      "date": "2026年",
+      "verifyUrl": "#",
+      "image": "aws-dva-c02",
+      "skills": [
+        "AWS Lambda",
+        "DynamoDB",
+        "API Gateway",
+        "CI/CD",
+        "IAM・セキュリティ"
+      ]
+    },
     {
       "title": "運転免許証",
       "issuer": "警察庁",
       "date": "2022年4月",
       "verifyUrl": "#",
-      "skills": ["車"]
+      "skills": [
+        "車"
+      ]
     },
     {
       "title": "日本語能力試験 N2",
       "issuer": "日本国際教育支援協会",
       "date": "2020年12月",
       "verifyUrl": "#",
-      "skills": ["読解", "文章作成", "聴解"]
+      "skills": [
+        "読解",
+        "文章作成",
+        "聴解"
+      ]
     },
     {
       "title": "Javaプログラミング レベル3",
       "issuer": "サーティファイ情報処理技能認定委員会",
       "date": "2020年2月",
       "verifyUrl": "#",
-      "skills": ["Java", "構文と文法", "クラスとメソッド", "オブジェクト指向"]
-    },
-    {
-      "title": "ICTプロフィシエンシーテスト レベル4",
-      "issuer": "ICTプロフィシエンシー認定協会",
-      "date": "2020年1月",
-      "verifyUrl": "#",
-      "skills": ["ハードウェア", "ソフトウェア", "オペレーティングシステム"]
+      "skills": [
+        "Java",
+        "構文と文法",
+        "クラスとメソッド",
+        "オブジェクト指向"
+      ]
     }
   ]
 }

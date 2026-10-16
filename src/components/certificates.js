@@ -5,6 +5,14 @@ import {
 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import allCertificates from "./text/certificate.json";
+import awsDvaBadge from "../images/aws-dva-c02-badge.jpg";
+import genAiPassport from "../images/genai-passport.jpg";
+
+// Maps the "image" key in certificate.json to an imported image
+const certImages = {
+  "aws-dva-c02": awsDvaBadge,
+  "genai-passport": genAiPassport,
+};
 
 const container = {
   hidden: { opacity: 0, y: 16 },
@@ -75,6 +83,13 @@ export default function Certificates() {
                 className="cert-card glass p-4 h-100 w-100 position-relative overflow-hidden"
               >
 
+                {/* Certificate image */}
+                {certImages[c.image] && (
+                  <div className="cert-img-wrap mb-3">
+                    <img src={certImages[c.image]} alt={c.title} className="cert-img" loading="lazy" />
+                  </div>
+                )}
+
                 {/* Header */}
                 <div className="d-flex align-items-start gap-2 mb-2">
                   <div className="d-flex align-items-center flex-grow-1 min-width-0">
@@ -130,6 +145,15 @@ export default function Certificates() {
           background: rgba(255,255,255,0.08);
           font-size: .85rem; color:#fff;
           backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+        }
+
+        .cert-scope .cert-img-wrap {
+          height: 180px; border-radius: 12px; overflow: hidden;
+          background: #fff;
+          display: flex; align-items: center; justify-content: center;
+        }
+        .cert-scope .cert-img {
+          max-width: 100%; max-height: 100%; object-fit: contain;
         }
 
         /* Ensure badge stays on right side */

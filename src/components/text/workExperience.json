@@ -1,6 +1,18 @@
 {
   "en": [
     {
+      "role": "Software Engineer",
+      "company": "Hanwha Japan",
+      "period": "2025-12 — Present",
+      "location": "Tokyo, Japan",
+      "type": "Full-time",
+      "summary": "Currently working at Hanwha Japan, applying backend development, cloud (AWS), and generative AI skills to business systems.",
+      "achievements": [],
+      "stack": ["Java", "AWS", "Generative AI"],
+      "links": [{ "href": "#", "label": "Project Overview" }],
+      "kpis": []
+    },
+    {
       "role": "Reconstruction of Management Accounting System & Data Integration",
       "company": "eSTACK Corporation",
       "period": "2025-06 — 2025-11",
@@ -128,6 +140,18 @@
   ],
 
   "jp": [
+    {
+      "role": "ソフトウェアエンジニア",
+      "company": "ハンファジャパン株式会社",
+      "period": "2025年12月 — 現在",
+      "location": "東京、日本",
+      "type": "正社員",
+      "summary": "現在ハンファジャパンにて、バックエンド開発・クラウド（AWS）・生成AIのスキルを活かして業務システムに携わっています。",
+      "achievements": [],
+      "stack": ["Java", "AWS", "生成AI"],
+      "links": [{ "href": "#", "label": "プロジェクト概要" }],
+      "kpis": []
+    },
     {
       "role": "管理会計システムの再構築＆データ統合",
       "company": "eSTACK株式会社",
