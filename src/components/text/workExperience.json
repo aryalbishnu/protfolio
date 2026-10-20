@@ -6,11 +6,20 @@
       "period": "2025-12 — Present",
       "location": "Tokyo, Japan",
       "type": "Full-time",
-      "summary": "Currently working at Hanwha Japan, applying backend development, cloud (AWS), and generative AI skills to business systems.",
-      "achievements": [],
-      "stack": ["Java", "AWS", "Generative AI"],
+      "summary": "Developing internal business systems and workflow automation at Hanwha Japan, combining backend APIs, low-code tools, cloud (AWS), and generative AI to streamline day-to-day operations.",
+      "achievements": [
+        "Built workflow automations with n8n and Power Automate to connect internal systems and remove manual, repetitive tasks.",
+        "Developed Google Apps Script (GAS) tools to automate Google Workspace tasks such as Sheets data processing, reporting, and notifications.",
+        "Implemented backend APIs with FastAPI (Python) to serve data and integrations for internal tools.",
+        "Integrated generative AI into business workflows to support document handling and information lookup.",
+        "Used AWS services to deploy and run internal applications and integrations."
+      ],
+      "stack": ["Python", "FastAPI", "n8n", "Power Automate", "Google Apps Script", "Java", "AWS", "Generative AI"],
       "links": [{ "href": "#", "label": "Project Overview" }],
-      "kpis": []
+      "kpis": [
+        { "label": "Role", "value": "Software Engineer" },
+        { "label": "Focus", "value": "Automation & AI" }
+      ]
     },
     {
       "role": "Reconstruction of Management Accounting System & Data Integration",
@@ -29,7 +38,7 @@
       "stack": ["Java", "JavaScript", "PostgreSQL", "ASTERIA", "Zapier", "React", "BackLog"],
       "links": [{ "href": "#", "label": "Project Overview" }],
       "kpis": [
-        { "label": "Role", "value": "Programmar" },
+        { "label": "Role", "value": "Programmer" },
         { "label": "Deploys / Month", "value": "6" },
         { "label": "Team Members", "value": "4" }
       ]
@@ -50,7 +59,7 @@
       "stack": ["Java", "JavaScript", "jQuery", "Oracle", "Seasar2", "Eclipse", "VBA", "SVN", "Tomcat"],
       "links": [{ "href": "#", "label": "Project Overview" }],
       "kpis": [
-        { "label": "Role", "value": "Programmar" },
+        { "label": "Role", "value": "Programmer" },
         { "label": "Deploys / Month", "value": "7" },
         { "label": "Team Members", "value": "11" }
       ]
@@ -70,7 +79,7 @@
       "stack": ["Java", "JavaScript", "jQuery", "Ajax", "Bootstrap", "JSF", "SVN", "DataSpider", "FastApp", "TeraTerm"],
       "links": [{ "href": "#", "label": "Project Overview" }],
       "kpis": [
-        { "label": "Role", "value": "Programmar" },
+        { "label": "Role", "value": "Programmer" },
         { "label": "Deploys / Month", "value": "21" },
         { "label": "Team Members", "value": "14" }
       ]
@@ -90,7 +99,7 @@
       "stack": ["Java", "JavaScript", "jQuery", "Spring", "SQL", "Eclipse", "Git", "Tomcat"],
       "links": [{ "href": "#", "label": "Project Overview" }],
       "kpis": [
-        { "label": "Role", "value": "Programmar" },
+        { "label": "Role", "value": "Programmer" },
         { "label": "Deploys / Month", "value": "8" },
         { "label": "Team Members", "value": "25" }
       ]
@@ -111,7 +120,7 @@
       "stack": ["Java", "JavaScript", "jQuery", "Spring Boot", "MySQL", "Eclipse", "SVN", "Bootstrap"],
       "links": [{ "href": "#", "label": "Project Overview" }],
       "kpis": [
-        { "label": "Role", "value": "Programmar" },
+        { "label": "Role", "value": "Programmer" },
         { "label": "Deploys / Month", "value": "9" },
         { "label": "Team Members", "value": "10" }
       ]
@@ -124,10 +133,10 @@
       "type": "Full-time",
       "summary": "Revamped convenience store website to enhance UX, mobile responsiveness, and product visibility; streamlined navigation and optimized cross-device performance.",
       "achievements": [
-        "Designed & shipped REST APIs with Spring Boot; improved P99 latency by ~30%.",
-        "Led backend development and testing efforts, including unit and integration.",
-        "High-performance web application.",
-        "Team collaboration focus."
+        "Created and executed test cases for the renewed website across PC and mobile devices.",
+        "Verified UI, navigation, and product display against the specifications.",
+        "Reported and tracked defects with developers until they were fixed and re-tested.",
+        "Supported regression testing before each release."
       ],
       "stack": ["Java", "JavaScript", "Spring Boot", "PostgreSQL", "Eclipse", "Git", "Tomcat"],
       "links": [{ "href": "#", "label": "Project Overview" }],
@@ -146,11 +155,20 @@
       "period": "2025年12月 — 現在",
       "location": "東京、日本",
       "type": "正社員",
-      "summary": "現在ハンファジャパンにて、バックエンド開発・クラウド（AWS）・生成AIのスキルを活かして業務システムに携わっています。",
-      "achievements": [],
-      "stack": ["Java", "AWS", "生成AI"],
+      "summary": "ハンファジャパンにて、バックエンドAPI・ローコードツール・クラウド（AWS）・生成AIを組み合わせ、社内業務システムの開発と業務自動化に取り組んでいます。",
+      "achievements": [
+        "n8n と Power Automate で社内システム間を連携するワークフローを構築し、手作業の繰り返し業務を削減。",
+        "Google Apps Script（GAS）で、スプレッドシートのデータ処理・レポート作成・通知など Google Workspace 業務を自動化。",
+        "FastAPI（Python）で社内ツール向けのデータ提供・連携用バックエンドAPIを実装。",
+        "生成AIを業務フローに組み込み、文書処理や情報検索を支援。",
+        "AWS を利用して社内アプリケーションや連携処理をデプロイ・運用。"
+      ],
+      "stack": ["Python", "FastAPI", "n8n", "Power Automate", "Google Apps Script", "Java", "AWS", "生成AI"],
       "links": [{ "href": "#", "label": "プロジェクト概要" }],
-      "kpis": []
+      "kpis": [
+        { "label": "役割", "value": "ソフトウェアエンジニア" },
+        { "label": "注力分野", "value": "自動化・AI" }
+      ]
     },
     {
       "role": "管理会計システムの再構築＆データ統合",
@@ -264,10 +282,10 @@
       "type": "正社員",
       "summary": "コンビニエンスストアのWebサイトを刷新し、UX、モバイル対応、商品の可視性を向上。ナビゲーションを効率化し、クロスデバイスパフォーマンスを最適化。",
       "achievements": [
-        "Spring BootでREST APIを設計・リリースし、P99レイテンシを約30％改善。",
-        "ユニット・統合テストを含むバックエンド開発とテストをリード。",
-        "高性能なWebアプリケーションを実現。",
-        "チームコラボレーションに注力。"
+        "リニューアルしたWebサイトのテストケースを作成し、PC・モバイル端末でテストを実施。",
+        "UI、ナビゲーション、商品表示が仕様どおりか検証。",
+        "不具合を報告・管理し、開発者と連携して修正後の再テストまで対応。",
+        "各リリース前の回帰テストを支援。"
       ],
       "stack": ["Java", "JavaScript", "Spring Boot", "PostgreSQL", "Eclipse", "Git", "Tomcat"],
       "links": [{ "href": "#", "label": "プロジェクト概要" }],

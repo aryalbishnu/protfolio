@@ -18,7 +18,7 @@ function About() {
             text4: "automation and cloud technologies",
             text5: ", aiming to grow into a Python full-stack developer. ",
             text6: "Currently at Hanwha Japan,",
-            text7: " contributing to projects in banking, credit card systems, and management accounting.",
+            text7: " building business systems and workflow automation with n8n, Power Automate, GAS, FastAPI, AWS, and generative AI.",
             certificate: "Certificates",
             project: "Projects",
             year: "Years"
@@ -32,7 +32,7 @@ function About() {
             text4: "自動化やクラウド技術に情熱を持ち、",
             text5: "将来的にはPythonのフルスタック開発者として成長することを目指しています。",
             text6: "現在は ハンファジャパン株式会社 にて、",
-            text7: "銀行、クレジットカードシステム、管理会計などのプロジェクトに携わっています。",
+            text7: "n8n、Power Automate、GAS、FastAPI、AWS、生成AIを活用した業務システム開発と業務自動化に取り組んでいます。",
             certificate: "証明書",
             project: "プロジェクト",
             year: "年数"
@@ -43,7 +43,7 @@ function About() {
 
     // target values
     const targetValues = {
-        years: 4,
+        years: 5,
         projects: 10,
         certificates: 6,
     };

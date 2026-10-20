@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Users } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
-import awsSummitPic from "../images/aws-summit-japan-2026.jpg";
+import awsSummitPic from "../images/aws-summit-japan-2026-badge.png";
 import googleCloudNextPic from "../images/google-cloud-next-tokyo.jpg";
 
 export default function Events() {

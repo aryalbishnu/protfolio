@@ -3,11 +3,11 @@
     {
       "degree": "Faculty of Arts and Science",
       "school": "The Open University of Japan",
-      "period": "2025 — Present",
+      "period": "2025 — Mar 2027 (Expected)",
       "location": "Chiba, Japan",
       "details": [
-        "Spring Boot, Java, Python, REST best practices, Microservices",
-        "Docker, Linux, Git, CI/CD (GitHub Actions/Jenkins)"
+        "Bachelor's degree program, studying part-time while working full-time as a software engineer",
+        "Expected graduation: March 2027"
       ],
       "badge": "Ongoing"
     },
@@ -50,11 +50,11 @@
     {
       "degree": "教養学部",
       "school": "放送大学",
-      "period": "2025年 — 現在",
+      "period": "2025年 — 2027年3月（卒業予定）",
       "location": "千葉、日本",
       "details": [
-        "Spring Boot、Java、Python、RESTベストプラクティス、マイクロサービス",
-        "Docker、Linux、Git、CI/CD（GitHub Actions/Jenkins）"
+        "学士課程。ソフトウェアエンジニアとしてフルタイムで働きながら在学中",
+        "2027年3月 卒業予定"
       ],
       "badge": "進行中"
     },

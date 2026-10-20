@@ -7,6 +7,8 @@ const defaultLinks = [
   { href: "#hero", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
+  { href: "#certificates", label: "Certificates" },
+  { href: "#events", label: "Events" },
   { href: "#education", label: "Education" },
   { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },

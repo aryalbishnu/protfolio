@@ -1,7 +1,7 @@
 // Skills.jsx
 import { motion } from "framer-motion";
 import {
-  Code2, Server, Database, Cloud, Wrench, GitBranch, Terminal, Workflow
+  Code2, Server, Database, Cloud, Wrench, GitBranch, Terminal, Workflow, Zap, Link2
 } from "lucide-react";
 import { createLucideIcon } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -29,8 +29,10 @@ const card = {
 };
 
 const techPills = [
-"Java", "Spring Boot", "Node.js", "Express", "Java Script", "React", "Python",
+"Java", "Spring Boot", "Node.js", "Express", "Java Script", "React", "Python", "FastAPI",
+  "Google Apps Script", "VBA",
   "PostgreSQL", "MySQL", "MongoDB", "Oracle", "Thymeleaf", "Asteria", "DataSpider", "JP1",
+  "n8n", "Power Automate", "Zapier",
   "AWS", "Docker", "Linux", "Git", "SVN"
 ];
 
@@ -42,6 +44,8 @@ const categories = [
       { name: "Java", level: 90 },
       { name: "JavaScript / TypeScript", level: 78 },
       { name: "Python", level: 70 },
+      { name: "Google Apps Script (GAS)", level: 75 },
+      { name: "VBA", level: 70 },
     ],
   },
   {
@@ -51,6 +55,7 @@ const categories = [
       { name: "Spring Boot", level: 90 },
       { name: "Node.js", level: 80 },
       { name: "Express", level: 75 },
+      { name: "FastAPI", level: 70 },
       { name: "REST APIs", level: 80 },
     ],
   },
@@ -88,6 +93,9 @@ const categories = [
     skills: [
       { name: "Data Spider", level: 82, icon: <DataSpider size={16} className="me-1" /> },
       { name: "Asteria", level: 75, icon: <Asteria size={16} className="me-1" /> },
+      { name: "n8n", level: 78, icon: <Workflow size={16} className="me-1" /> },
+      { name: "Power Automate", level: 75, icon: <Zap size={16} className="me-1" /> },
+      { name: "Zapier", level: 70, icon: <Link2 size={16} className="me-1" /> },
     ],
   },
 ];
